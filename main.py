@@ -43,10 +43,11 @@ if __name__ == "__main__":
 
     # Kolor tła planszy
     stage_bg_color = "lightblue"
+    stage_bgm = 0
 
     # Wielkość widoku planszy
     view_width = 20
     view_height = 15
 
-    app = TilemapViewer(tilemap_data, tile_size, stage_bg_color, view_width, view_height)
+    app = TilemapViewer(tilemap_data, tile_size, stage_bg_color, stage_bgm, view_width, view_height)
     app.mainloop()

@@ -1,6 +1,7 @@
 # import the TKInter library
 import tkinter as tk
 from tkinter import Toplevel, Listbox, Scrollbar, SINGLE
+from PIL import Image, ImageTk
 
 # Object list subwindow
 class ObjectListWindow:
@@ -9,6 +10,11 @@ class ObjectListWindow:
         self.master = master
         self.window = Toplevel(master)
         self.window.title("Object List")
+        
+        # Set up window icon
+        ico = Image.open('graphics/objecticon.png')
+        photo = ImageTk.PhotoImage(ico)
+        self.window.wm_iconphoto(False, photo)
         
         # Set window size
         self.window.geometry("200x150")
@@ -48,3 +54,8 @@ class ObjectListWindow:
             
         # Prepare the close window handler
         self.window.protocol("WM_DELETE_WINDOW", on_close)
+        
+if __name__ == "__main__":
+    app = tk.Tk()
+    level_settings_window = ObjectListWindow(app)
+    app.mainloop()

@@ -9,11 +9,16 @@ from level_settings import LevelSettingsWindow
 
 # Tilemap Viewer class
 class TilemapViewer(tk.Tk):
-    def __init__(self, tilemap, tile_size, stage_bg, view_width, view_height):
+    def __init__(self, tilemap, tile_size, stage_bg, stage_bgm, view_width, view_height):
         # Set up the window
         super().__init__()
         self.title("AOTMRLE - Attack of the Martians Remastered Level Editor")
         self.resizable(False, False) 
+        
+        # Set up window icon
+        ico = Image.open('graphics/editoricon.png')
+        photo = ImageTk.PhotoImage(ico)
+        self.wm_iconphoto(False, photo)
         
         self.object_list_opened = False
         self.level_settings_opened = False
@@ -46,10 +51,11 @@ class TilemapViewer(tk.Tk):
         self.canvas.pack(side="left", fill="both", expand=False)  # Ustawienie expand na False
 
         self.stage_bg_color = stage_bg
-        self.draw_background()
+        self.stage_bgm = stage_bgm
 
         self.load_tile_images()
-        self.draw_tilemap()
+        
+        self.redraw_tilemap()
         
         self.canvas.configure(yscrollcommand=v_scrollbar.set, xscrollcommand=h_scrollbar.set)
         self.canvas.bind("<Configure>", self.on_canvas_configure)
@@ -85,6 +91,12 @@ class TilemapViewer(tk.Tk):
 
         h_scrollbar = Scale(self.container, from_=0, to=max(self.cols-20,0), showvalue=0, orient="horizontal", command=self.update_horizontal_counter)
         h_scrollbar.pack(side="bottom", fill="x")
+        
+    def set_vertical_scrollbar_max(self, value):
+        v_scrollbar.config(to=value)
+
+    def set_horizontal_scrollbar_max(self, value):
+        h_scrollbar.config(to=value)
         
     def add_menu(self):
         # Add the menu bar
