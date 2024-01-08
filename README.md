@@ -1,6 +1,6 @@
 
 ![Logo](https://i.imgur.com/KpAJhEy.png)
-| [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://github.com/LilyUwU2001/AOTMRLE/blob/main/LICENSE) | ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/LilyUwU2001/AOTMRLE?logo=github) | ![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/LilyUwU2001/AOTMRLE?logo=github) |
+| [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v2-yellow.svg)](https://github.com/LilyUwU2001/AOTMRLE/blob/main/LICENSE) | ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/LilyUwU2001/AOTMRLE?logo=github) | ![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/LilyUwU2001/AOTMRLE?logo=github) |
 |---|---|---|
 | ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/LilyUwU2001/AOTMRLE?logo=github) | ![Static Badge](https://img.shields.io/badge/version-0.3-green) | ![Static Badge](https://img.shields.io/badge/trans%20rights-are%20human%20rights-pink?labelColor=lightblue) |
 
