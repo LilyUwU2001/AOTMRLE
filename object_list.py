@@ -39,6 +39,7 @@ class ObjectListWindow:
         for name in object_names:
             self.object_list.insert(tk.END, name)
             
+        # Pack the object list
         self.object_list.pack(side="left", fill="both", expand=True)
         
         # Add a vertical scrollbar to the list
@@ -54,6 +55,16 @@ class ObjectListWindow:
             
         # Prepare the close window handler
         self.window.protocol("WM_DELETE_WINDOW", on_close)
+        
+        # Bind the object selection to left click
+        self.object_list.bind("<ButtonRelease-1>", self.select_object_from_list)
+        
+    # Select object from list
+    def select_object_from_list(self, event):
+        selected_index = self.object_list.curselection()
+        if selected_index:
+            selected_object_id = self.object_list.curselection()[0]+1
+            self.master.set_main_id(selected_object_id)
         
 if __name__ == "__main__":
     app = tk.Tk()

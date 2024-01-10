@@ -197,14 +197,14 @@ class LevelSettingsWindow:
         self.value = value
         
     def create_music_picker(self, target_frame):
-        # Dodanie rozwijalnego menu (dropdown) z wyborem muzyki
+        # Prepare music dropdown menu
         music_label = Label(self.window, text="Choose level music track:")
         music_label.pack(pady=5)
 
         self.music_options = ["Metallica - Seek & Destroy (music1.ogg)", "Caltron 6-in-1 - Bookyman (music2.ogg)", "Metallica - For Whom the Bell Tolls (music3.ogg)",
                               "Gustav Holst - Mars, the Bringer of War (music4.ogg)"]
         self.selected_music = tk.StringVar(self.window)
-        self.selected_music.set(self.music_options[0])  # Ustawienie domyślnej wartości
+        self.selected_music.set(self.music_options[0])  # Set default value
         music_dropdown = ttk.Combobox(self.window, state="readonly", width=51, textvariable=self.selected_music, values=self.music_options)
         music_dropdown.pack(pady=0)
         
